@@ -118,3 +118,6 @@ If you use any part of this work, please consider citing the paper as follows:
     pages = "924--938",
 }
 ```
+
+## License
+This work is licensed under the CC BY-NC-SA 4.0 license.
