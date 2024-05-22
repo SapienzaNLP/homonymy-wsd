@@ -89,7 +89,7 @@ python src/analysis/main_analyze_resources.py > logs/analyses.txt
 It will compute statistics about intra-cluster and inter-cluster distances.
 Images will be saved in the *images* folder, while the statistics will be saved in the *logs* folder.
 
-## Cite this work
+## Cite this Work
 If you use any part of this work, please consider citing the paper as follows:
 
 ```bibtex
