@@ -120,4 +120,4 @@ If you use any part of this work, please consider citing the paper as follows:
 ```
 
 ## License
-This work is licensed under the CC BY-NC-SA 4.0 license.
+This work is licensed under [Creative Commons Attribution-ShareAlike-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
