@@ -12,7 +12,7 @@
 
 ## About the Project
 
-This project investigates the ability of Pretrained Language Models (PLMs) to perform **Homonymy Disambiguation**, a specific form of Word Sense Disambiguation (WSD) focused on distinguishing **unrelated senses** of the same word—i.e., homonyms. To this end, we introduce a **new large-scale annotated resource** that reduces the granularity of [WordNet](https://wordnet.princeton.edu/) by systematically separating homonymous (i.e., unrelated) meanings and grouping together polysemous (i.e., related) ones.
+This project investigates the ability of Pretrained Language Models (PLMs) to perform **Homonymy Disambiguation**, a specific form of Word Sense Disambiguation (WSD) focused on distinguishing **unrelated senses** of the same word—i.e., homonyms. To this end, we introduce a **new large-scale annotated resource** that reduces the granularity of [WordNet](https://wordnet.princeton.edu/) by systematically separating homonymous (i.e., unrelated) meanings and grouping polysemous (i.e., related) ones.
 
 The repository provides:
 - the new resource—consisting of a homonymy-based clustering of WordNet senses—together with all the data required to replicate the experiments presented in the paper;
@@ -24,12 +24,6 @@ Our experiments show that PLMs such as BERT can separate homonymous senses with 
 
 ## Structure of the Repository
 
-The code is organized as follows:
-- **data**: new resource and data required to replicate the experiments from the paper;
-- **distances_analysis**: code to probe the ability of PLMs to disambiguate homonyms. This is done employing distance measures between contextualized embeddings (instance-based learning);
-- **wsd_systems**: code to train and evaluate PLMs on the fine-grained and coarse-grained WSD tasks.
-- **resource_analysis**: code to analyze the new resource described in the paper, computing intra-cluster and inter-cluster statistics;
-
 To run the code, first download the required [data file](https://drive.google.com/file/d/1kKQzOpTgvfCFUDs9H_d0z1PkcB3yez3q/view?usp=sharing) and unzip it. Then, create a new [conda](https://docs.conda.io/projects/conda/en/latest/index.html) environment and install the required packages using the following commands:
 
 ```bash
@@ -39,13 +33,19 @@ conda activate homonymy_wsd
 pip install -r requirements.txt
 ```
 
+The code is organized as follows:
+- **data**: new resource and data required to replicate the experiments from the paper;
+- **distances_analysis**: code to probe the ability of PLMs to disambiguate homonyms. This is done employing distance measures between contextualized embeddings (instance-based learning);
+- **wsd_systems**: code to train and evaluate PLMs on the fine-grained and coarse-grained WSD tasks.
+- **resource_analysis**: code to analyze the new resource described in the paper, computing intra-cluster and inter-cluster statistics;
+
 ## Data
 
-The [data](data) folder includes both the new resource and all the data required to replicate the experiments presented in the paper.
+The *data* folder includes both the new resource and all the data required to replicate the experiments presented in the paper.
 
 ### Resource
 
-The new resource is stored in the [data/wn_homonyms.pkl](data/wn_homonyms.pkl) and [data/cluster2fine_map.json](data/cluster2fine_map.json) files:
+The new resource is stored in the *data/wn_homonyms.pkl* and *data/cluster2fine_map.json* files:
 
 - **wn_homonyms.pkl**: a Python dictionary where each key is a WordNet (lemma, PoS) pair, and each value contains the homonymy-based clustering of its possible WordNet senses (or meanings).
 - **cluster2fine_map.json**: a mapping from homonymy cluster identifiers to lists of WordNet synsets (with definitions) that form the clusters.
@@ -92,13 +92,13 @@ with open('data/cluster2fine_map.json', 'r', encoding='utf-8') as f:
 
 ### Mapped WSD Datasets
 
-The *train/dev/test* split used in the experiments is located in the [data/new_split](data/new_split) folder.  
+The *train/dev/test* split used in the experiments is located in the *data/new_split* folder.  
 Each `.json` file in this folder is a dictionary where each key uniquely identifies a sense-tagged sentence, and each value is a dictionary containing both fine-grained (WordNet senses) and coarse-grained (homonymy clusters) annotations.
 
 The sense-tagged sentences fall into two categories:
 
 1. **WordNet Examples**: usage examples from WordNet, each containing exactly one tagged WordNet sense.
-2. **SemCor, SemEval-2007, and ALL$_{NEW}$**: annotated corpora containing multiple sense-tagged words per sentence.
+2. **SemCor, SemEval-2007, and ALL<sub>NEW</sub>**: annotated corpora containing multiple sense-tagged words per sentence.
 
 #### Field Descriptions
 
