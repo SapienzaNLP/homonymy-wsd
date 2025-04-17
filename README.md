@@ -76,14 +76,14 @@ import json
 with open('data/cluster2fine_map.json', 'r', encoding='utf-8') as f: 
     homonymy_cluster_id2wn_synsets = json.load(f)
 
->>> homonymy_cluster_id2wn_synsets["list.v.h.01"]
+>>> homonymy_cluster_id2wn_synsets['list.v.h.01']
 [
     ['list.v.01', 'give or make a list of; name individually; give the names of'],
     ['list.v.02', 'include in a list'],
     ['number.v.03', 'enumerate']
 ]
 
->>> homonymy_cluster_id2wn_synsets["list.v.h.02"]
+>>> homonymy_cluster_id2wn_synsets['list.v.h.02']
 [
     ['list.v.03', 'cause to lean to the side'],
     ['list.v.04', 'tilt to one side']
