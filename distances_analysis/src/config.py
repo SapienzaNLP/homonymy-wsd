@@ -1,2 +1,2 @@
 
-data_path = "_final_data/" # path to the data
+data_path = "data/" # path to the data
