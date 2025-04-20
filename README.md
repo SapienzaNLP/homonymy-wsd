@@ -17,7 +17,7 @@ This project investigates the ability of Pretrained Language Models (PLMs) to pe
 The repository provides:
 - the new resource—consisting of a homonymy-based clustering of WordNet senses—together with all the data required to replicate the experiments presented in the paper;
 - tools to **probe PLMs** and investigate whether the ability to distinguish homonymous senses emerges during pretraining—without task-specific fine-tuning—using **distance-based measures**;
-- scripts to **fine-tune and evaluate models** on both **coarse-grained** and **fine-grained** WSD tasks.
+- scripts to **fine-tune and evaluate models** on both **coarse-grained** and **fine-grained** WSD tasks;
 - the code to **analyze** the new homonymy-based resource.
 
 Our experiments show that PLMs such as BERT can separate homonymous senses with **up to 95% accuracy** without any fine-tuning, and that a simple fine-tuned model can reach even higher performance.
