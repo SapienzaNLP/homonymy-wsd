@@ -18,7 +18,7 @@ The repository provides:
 - the new resource—consisting of a homonymy-based clustering of WordNet senses—together with all the data required to replicate the experiments presented in the paper;
 - tools to **probe PLMs** and investigate whether the ability to distinguish homonymous senses emerges during pretraining—without task-specific fine-tuning—using **distance-based measures**;
 - scripts to **fine-tune and evaluate models** on both **coarse-grained** and **fine-grained** WSD tasks.
-- the code to **analyze** the new homonymy-based resource;
+- the code to **analyze** the new homonymy-based resource.
 
 Our experiments show that PLMs such as BERT can separate homonymous senses with **up to 95% accuracy** without any fine-tuning, and that a simple fine-tuned model can reach even higher performance.
 
@@ -36,8 +36,8 @@ pip install -r requirements.txt
 The code is organized as follows:
 - **data**: new resource and data required to replicate the experiments from the paper;
 - **distances_analysis**: code to probe the ability of PLMs to disambiguate homonyms. This is done employing distance measures between contextualized embeddings (instance-based learning);
-- **wsd_systems**: code to train and evaluate PLMs on the fine-grained and coarse-grained WSD tasks.
-- **resource_analysis**: code to analyze the new resource described in the paper, computing intra-cluster and inter-cluster statistics;
+- **wsd_systems**: code to train and evaluate PLMs on the fine-grained and coarse-grained WSD tasks;
+- **resource_analysis**: code to analyze the new resource described in the paper, computing intra-cluster and inter-cluster statistics.
 
 ## Data
 
@@ -47,7 +47,7 @@ The *data* folder includes both the new resource and all the data required to re
 
 The new resource is stored in the *data/wn_homonyms.pkl* and *data/cluster2fine_map.json* files:
 
-- **wn_homonyms.pkl**: a Python dictionary where each key is a WordNet (lemma, PoS) pair, and each value contains the homonymy-based clustering of its possible WordNet senses (or meanings).
+- **wn_homonyms.pkl**: a Python dictionary where each key is a WordNet (lemma, PoS) pair, and each value contains the homonymy-based clustering of its possible WordNet senses (or meanings);
 - **cluster2fine_map.json**: a mapping from homonymy cluster identifiers to lists of WordNet synsets (with definitions) that form the clusters.
 
 For example, the following Python code snippet extracts the homonymy-based clustering of the WordNet senses for the **(list, VERB)** pair, as shown in Table 1 of the paper:
@@ -97,7 +97,7 @@ Each `.json` file in this folder is a dictionary where each key uniquely identif
 
 The sense-tagged sentences fall into two categories:
 
-1. **WordNet Examples**: usage examples from WordNet, each containing exactly one tagged WordNet sense.
+1. **WordNet Examples**: usage examples from WordNet, each containing exactly one tagged WordNet sense;
 2. **SemCor, SemEval-2007, and ALL<sub>NEW</sub>**: annotated corpora containing multiple sense-tagged words per sentence.
 
 #### Field Descriptions
